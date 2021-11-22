@@ -30,7 +30,7 @@ def cargar_pagina(url):
 def cargar_tablas(soup):
     tablas_list = list()
     list_elementos = soup.findAll("div",{"data-aos": "row-of-5"})
-
+    
     i = 0
 
     for elemento in list_elementos:
@@ -67,7 +67,7 @@ def cargar_tablas(soup):
 def cargar_todas_paginas():
     soup_list = list()
     for num_pag in range(1, 7):
-        soup = cargar_pagina(url_pagina + str(num_pag))
+        soup = cargar_pagina(soup + str(num_pag)) #He reemplazado soup por ulr_pagina en el parametro cargar pagina 
         soup_list.append(soup)
     return soup_list
 
